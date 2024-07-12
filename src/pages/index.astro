@@ -16,7 +16,7 @@ const posts = (
 <Layout title="Andre LeBlanc">
 	<div class="py-5" slot="header">
 		<Bio />
-		<div class="divider"></div>
+		<div class="divider divider-accent"></div>
 	</div>
 
 	<main>
@@ -27,7 +27,7 @@ const posts = (
 
 					return (
 						<a href={"posts/" + post.slug}>
-							<div class="p-10 border rounded-l flex flex-col items-center gap-5">
+							<div class="p-10 border border-accent rounded-l flex flex-col items-center gap-5">
 								<div class="text-center">
 									<span>{post.data.publishedDate}</span>
 									<h2 class="text-3xl font-bold text-center">
@@ -35,7 +35,9 @@ const posts = (
 									</h2>
 								</div>
 								{excerpt}...
-								<div class="border rounded-full px-5 py-3 w-fit">Read More</div>
+								<div class="border border-accent rounded-full px-5 py-3 mt-3 w-fit">
+									Read More
+								</div>
 							</div>
 						</a>
 					);
