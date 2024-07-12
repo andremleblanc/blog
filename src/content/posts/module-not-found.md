@@ -1,5 +1,6 @@
 ---
-title: Foo
+title: Module Not Found
+publishedDate: "2017-03-17"
 ---
 
 So, this started when I ran into a _#facepalm_ moment while working on my first React project. I suddenly got an error message like the one below.

@@ -1,5 +1,6 @@
 ---
-title: Foo
+title: Announcing DruidDB-Ruby
+publishedDate: "2017-08-23"
 ---
 
 ## What Does it Do

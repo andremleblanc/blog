@@ -4,9 +4,8 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	daisyui: { themes: ["retro", "dim"] },
 	theme: { extend: {} },
-	plugins: [require('daisyui')],
+	plugins: [
+		require('daisyui'),
+		require('@tailwindcss/typography')
+	],
 }
-
-// module.exports = {
-// 	darkMode: ['variant', '[data-theme="dim"]'],
-// }

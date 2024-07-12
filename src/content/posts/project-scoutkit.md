@@ -1,5 +1,6 @@
 ---
-title: Foo
+title: Project ScoutKit
+publishedDate: "2017-08-29"
 ---
 
 ## What is it?

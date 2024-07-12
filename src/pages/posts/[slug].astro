@@ -16,7 +16,16 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Layout title="Blog">
-  <Content />
+<Layout title={post.data.tile}>
+  <div class="prose max-w-none pt-10">
+    <div class="text-center">
+      <span>{post.data.publishedDate}</span>
+      <h1>{post.data.title}</h1>
+    </div>
+    <Content />
+  </div>
+
+  <div class="divider"></div>
+
   <Bio slot="footer" />
 </Layout>

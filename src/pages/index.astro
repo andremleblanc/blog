@@ -4,29 +4,43 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Bio from "../components/Bio.astro";
 import { createExcerpt } from "../utils/create-excerpt";
+import { sortItemsByDateDesc } from "../utils/data-utils";
 
-const posts = await getCollection("posts");
+const posts = (
+	await getCollection("posts", ({ data }) => {
+		return data.publishedDate != null;
+	})
+).sort(sortItemsByDateDesc);
 ---
 
-<Layout title="Welcome to Astro!">
-	<div slot="header">
+<Layout title="Andre LeBlanc">
+	<div class="py-5" slot="header">
 		<Bio />
+		<div class="divider"></div>
 	</div>
-	<main>
-		<h1>Blog</h1>
-		{
-			posts.map((post) => {
-				const excerpt = createExcerpt(post.body);
 
-				return (
-					<a href={"posts/" + post.slug} class="card bg-base-100">
-						<div class="card-body">
-							<h2>{post.data.title}</h2>
-							{excerpt}...
-						</div>
-					</a>
-				);
-			})
-		}
+	<main>
+		<div class="flex flex-col gap-10">
+			{
+				posts.map((post) => {
+					const excerpt = createExcerpt(post.body);
+
+					return (
+						<a href={"posts/" + post.slug}>
+							<div class="p-10 border rounded-l flex flex-col items-center gap-5">
+								<div class="text-center">
+									<span>{post.data.publishedDate}</span>
+									<h2 class="text-3xl font-bold text-center">
+										{post.data.title}
+									</h2>
+								</div>
+								{excerpt}...
+								<div class="border rounded-full px-5 py-3 w-fit">Read More</div>
+							</div>
+						</a>
+					);
+				})
+			}
+		</div>
 	</main>
 </Layout>

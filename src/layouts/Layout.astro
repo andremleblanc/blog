@@ -38,11 +38,11 @@ const { title } = Astro.props;
 				.addEventListener("change", setTheme);
 		</script>
 	</head>
-	<body>
-		<header>
+	<body class="mx-auto max-w-2xl py-10">
+		<header class="text-center">
 			<a href="/">
+				<div class="font-bold text-xl">André LeBlanc</div>
 				<div>@andremleblanc</div>
-				<div>André LeBlanc</div>
 			</a>
 
 			<slot name="header" />
