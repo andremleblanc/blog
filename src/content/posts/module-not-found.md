@@ -1,3 +1,7 @@
+---
+title: Foo
+---
+
 So, this started when I ran into a _#facepalm_ moment while working on my first React project. I suddenly got an error message like the one below.
 
 ![Module Not Found]({{ site.url }}/assets/images/module_not_found.png)

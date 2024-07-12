@@ -1,3 +1,7 @@
+---
+title: Foo
+---
+
 ## What Does it Do
 
 [druiddb-ruby](https://github.com/andremleblanc/druiddb-ruby) provides a client for your Ruby application to push data to Druid leveraging the [Kafka Indexing Service](http://druid.io/docs/latest/development/extensions-core/kafka-ingestion.html). The client also provides an interface for querying and performing management tasks. It will automatically find and connect to Kafka and the Druid nodes through ZooKeeper, which means you only need to provide the ZooKeeper host and it will find everything else.

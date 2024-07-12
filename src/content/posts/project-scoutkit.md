@@ -1,3 +1,7 @@
+---
+title: Foo
+---
+
 ## What is it?
 
 ScoutKit is a tool to help businesses find and manage influencers on Instagram. I was inspired by

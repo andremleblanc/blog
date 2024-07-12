@@ -1,9 +1,32 @@
 ---
+import { getCollection } from "astro:content";
+
 import Layout from "../layouts/Layout.astro";
+import Bio from "../components/Bio.astro";
+import { createExcerpt } from "../utils/create-excerpt";
+
+const posts = await getCollection("posts");
 ---
 
 <Layout title="Welcome to Astro!">
+	<div slot="header">
+		<Bio />
+	</div>
 	<main>
-		<h1 class="text-3xl font-bold underline">Hello world!</h1>
+		<h1>Blog</h1>
+		{
+			posts.map((post) => {
+				const excerpt = createExcerpt(post.body);
+
+				return (
+					<a href={"posts/" + post.slug} class="card bg-base-100">
+						<div class="card-body">
+							<h2>{post.data.title}</h2>
+							{excerpt}...
+						</div>
+					</a>
+				);
+			})
+		}
 	</main>
 </Layout>

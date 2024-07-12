@@ -1,4 +1,0 @@
-- All the options
-- Astro
-- Daisy UI for speed
-- Dark mode and script
