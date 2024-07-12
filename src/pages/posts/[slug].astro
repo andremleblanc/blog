@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+
+import Bio from "../../components/Bio.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post: post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.tile}>
+  <div class="prose max-w-none pt-10">
+    <div class="text-center">
+      <span>{post.data.publishedDate}</span>
+      <h1>{post.data.title}</h1>
+    </div>
+    <Content />
+  </div>
+
+  <div class="divider divider-accent"></div>
+
+  <Bio slot="footer" />
+</Layout>
