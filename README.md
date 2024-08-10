@@ -1,5 +1,13 @@
 # Blog
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2be8e3dc-0a50-465f-b36d-5ede02fb1195/deploy-status)](https://app.netlify.com/sites/andremleblanc/deploys)
+My personal blog.
+
+## Deploys
+Deploys happen manually since I am using a symlink to load posts from Obsidian.
+
+```
+npm run build
+netlify deploy --prod
+```
 
 ## Inspiration
 - https://world.hey.com/dhh
